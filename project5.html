@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 5 - Amazon Stock & Marketing Spend Analysis</title>
+    <meta name="description" content="Analysis of Amazon stock data and marketing spend impact on sales using time series and regression modeling.">
+    <meta name="keywords" content="Stock Analysis, Marketing Spend, Regression, Time Series">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+<body class="bg-gray-100 text-gray-900">
+    <header class="bg-white shadow-md sticky top-0 z-10 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-indigo-600">Amazon Stock & Marketing Spend Analysis</h1>
+            <nav>
+                <ul class="flex space-x-6 text-gray-700 text-lg">
+                    <li><a href="index.html" class="hover:text-indigo-600">Home</a></li>
+                    <li><a href="work.html" class="hover:text-indigo-600 font-bold">Back to Projects</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-10">
+        <section class="bg-white shadow-lg rounded-lg p-6 mb-6">
+            <h2 class="text-3xl font-bold text-indigo-600 mb-4">Introduction</h2>
+            <p>This project explores Amazon stock performance using time series analysis and evaluates the impact of marketing expenditures on sales through regression models.</p>
+        </section>
+
+        <section class="bg-white shadow-lg rounded-lg p-6 mb-6">
+            <h2 class="text-2xl font-bold text-indigo-600 mb-4">Key Steps and Findings</h2>
+            <h3 class="text-xl font-semibold text-gray-800 mt-4">Data Collection</h3>
+            <p>Historical Amazon stock data was analyzed, including Open, High, Low, Close, and Volume.</p>
+            <img src="image/dataover view .png" alt="Dataset Overview" class="mt-3 rounded w-1/2">
+        </section>
+
+        <section class="bg-white shadow-lg rounded-lg p-6 mb-6">
+            <h2 class="text-2xl font-bold text-indigo-600 mb-4">Time Series Analysis</h2>
+            <h3 class="text-lg font-semibold text-gray-800">Single Variable Plot (Close Price)</h3>
+            <p>Focusing on the Close variable reveals a clear upward trend with fluctuations.</p>
+            <img src="image/close every two month .png" alt="Close Price Plot" class="mt-3 rounded w-1/2">
+        </section>
+
+        <section class="bg-white shadow-lg rounded-lg p-6 mb-6">
+            <h3 class="text-lg font-semibold text-gray-800">Moving Averages</h3>
+            <p>Short-term and long-term moving averages help identify stock trends.</p>
+            <ul class="list-disc pl-5 text-gray-700">
+                <li><strong>15-Period MA:</strong> Reacts quickly but includes noise.</li>
+                <li><strong>65-Period MA:</strong> Smoother but slower to react.</li>
+            </ul>
+            <div class="flex justify-center space-x-4">
+                <img src="image/15.png" alt="15-Period Moving Average" class="mt-3 rounded w-1/2">
+                <img src="image/65.png" alt="65-Period Moving Average" class="mt-3 rounded w-1/2">
+            </div>
+        </section>
+
+        <section class="bg-white shadow-lg rounded-lg p-6 mb-6">
+            <h2 class="text-2xl font-bold text-indigo-600 mb-4">Marketing Spend & Sales Analysis</h2>
+            <h3 class="text-lg font-semibold text-gray-800">Correlation Analysis</h3>
+            <p>A strong positive correlation (0.925) exists between marketing spend and sales, though correlation ≠ causation.</p>
+            <img src="image/corelation matrix .png" alt="Correlation Matrix" class="mt-3 rounded w-1/2">
+        </section>
+
+        <section class="bg-white shadow-lg rounded-lg p-6 mb-6">
+            <h3 class="text-lg font-semibold text-gray-800">Regression Models</h3>
+            <h4 class="text-lg font-semibold">Model Without Interaction</h4>
+            <p>Captures individual effects of Web and Bus Stop spending on sales.</p>
+            <ul class="list-disc pl-5 text-gray-700">
+                <li><strong>R²:</strong> 0.903 (90.3% variance explained).</li>
+            </ul>
+            <div class="flex justify-center space-x-4">
+                <img src="image/w:o interaction .png" alt="Regression Without Interaction" class="mt-3 rounded w-1/2">
+                <img src="image/with interaction .png" alt="Regression With Interaction" class="mt-3 rounded w-1/2">
+            </div>
+        </section>
+
+        <section class="bg-white shadow-lg rounded-lg p-6 mb-6">
+            <h3 class="text-lg font-semibold text-gray-800">Predicted Sales</h3>
+            <ul class="list-disc pl-5 text-gray-700">
+                <li><strong>Web Ad Spend:</strong> 150 units</li>
+                <li><strong>Bus Stop Spend:</strong> 24 units</li>
+                <li><strong>Predicted Sales:</strong> ~15.34 units</li>
+            </ul>
+        </section>
+
+        <section class="bg-white shadow-lg rounded-lg p-6">
+            <h2 class="text-2xl font-bold text-indigo-600 mb-4">Conclusion</h2>
+            <p>By combining time series analysis and regression modeling, this project highlights the value of analytics in financial and business decisions.</p>
+        </section>
+    </main>
+</body>
+</html>
+

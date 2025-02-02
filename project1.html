@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 1 - Gold Zone Players Club Membership Analysis</title>
+    <meta name="description" content="An analysis of the Gold Zone Players Club Membership, uncovering trends in spending, game preferences, and demographics.">
+    <meta name="keywords" content="Data Analysis, Players Club, Spending Trends, Game Preferences">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+<body class="bg-gray-100 text-gray-900">
+    <header class="bg-white shadow-md sticky top-0 z-10 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-indigo-600">Project Analysis</h1>
+            <nav>
+                <a href="work.html" class="text-lg text-gray-700 hover:text-indigo-600">Back to Work</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-10">
+        <section class="bg-white shadow-lg rounded-lg p-6 mb-6">
+            <h2 class="text-3xl font-bold text-indigo-600 mb-4">Data Analysis on Gold Zone Players Club Membership</h2>
+            <p>The analysis of the Gold Zone Players Club membership data provides valuable insights into the spending patterns, game preferences, and demographics of the club's members.</p>
+        </section>
+
+        <section class="bg-white shadow-lg rounded-lg p-6 mb-6">
+            <h2 class="text-2xl font-bold text-indigo-600 mb-4">Dataset Overview</h2>
+            <ul class="list-disc pl-5 text-gray-700">
+                <li><strong>memberID:</strong> Unique identifier for each member.</li>
+                <li><strong>age_start:</strong> Age of the member when they joined.</li>
+                <li><strong>dist_park:</strong> Distance to the park in miles.</li>
+                <li><strong>gender:</strong> Gender of the member (Male/Female).</li>
+                <li><strong>job_type:</strong> Job type of the member (Salaried, Hourly, Unknown).</li>
+            </ul>
+        </section>
+
+        <section class="bg-white shadow-lg rounded-lg p-6 mb-6">
+            <h2 class="text-2xl font-bold text-indigo-600 mb-4">Key Insights from the Data</h2>
+            <div class="flex justify-center space-x-4">
+                <div class="w-1/2">
+                    <h3 class="text-xl font-medium mb-2">Game Popularity Trends</h3>
+                    <p>"Star Wars" is the most popular game, followed by "Connect 4 Hoops" and "Wheel Deal".</p>
+                    <img src="image/barplot.png" alt="Bar plot showing most common games" class="w-full my-4">
+                </div>
+                <div class="w-1/2">
+                    <h3 class="text-xl font-medium mb-2">Spending by Job Type</h3>
+                    <p>Salaried members typically spend more, but high-earning hourly workers also exhibit strong spending capacity.</p>
+                    <img src="image/boxplot.png" alt="Box plots of spending by group" class="w-full my-4">
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white shadow-lg rounded-lg p-6">
+            <h2 class="text-2xl font-bold text-indigo-600 mb-4">Conclusion</h2>
+            <ul class="list-disc pl-5 text-gray-700">
+                <li><strong>Game Popularity:</strong> "Star Wars" is the most popular, while "Dance Dance Revolution" attracts high spenders.</li>
+                <li><strong>Spending Behavior:</strong> Most members spend between $4,000 and $6,000.</li>
+                <li><strong>Demographic Insights:</strong> Game preferences vary by gender and age.</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

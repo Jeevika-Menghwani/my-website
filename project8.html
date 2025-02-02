@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 8 - Predicting Customer Behavior & Preferences</title>
+    <meta name="description" content="Analysis of Spotify dataset and Credit Card Income Classification using Naive Bayes.">
+    <meta name="keywords" content="Data Analysis, Spotify, k-NN, Credit Card, Naive Bayes, Income Classification">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+<body class="bg-gray-100 text-gray-900">
+    <header class="bg-white shadow-md sticky top-0 z-10 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-indigo-600">Project 8 - Predicting Customer Behavior & Preferences</h1>
+            <nav>
+                <a href="work.html" class="text-lg text-gray-700 hover:text-indigo-600">Back to Work</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-10">
+
+        <!-- Spotify Dataset Analysis -->
+        <section class="bg-white shadow-lg rounded-lg p-6 mb-6">
+            <h2 class="text-3xl font-bold text-indigo-600 mb-4">Spotify Dataset Analysis</h2>
+            <p>Analyzing the Spotify dataset to predict song likability using a k-NN model.</p>
+        </section>
+
+        <section class="bg-white shadow-lg rounded-lg p-6 mb-6">
+            <h2 class="text-2xl font-bold text-indigo-600 mb-4">Data Preprocessing</h2>
+            <ul class="list-disc pl-5 text-gray-700">
+                <li>No missing values found.</li>
+                <li>Converted percentage values (e.g., danceability) into decimals.</li>
+                <li>Renamed columns for clarity.</li>
+                <li>Dataset split: Training set (60%) and validation set (40%).</li>
+            </ul>
+        </section>
+
+        <section class="bg-white shadow-lg rounded-lg p-6 mb-6">
+            <h2 class="text-2xl font-bold text-indigo-600 mb-4">Statistical Analysis</h2>
+            <p><strong>T-tests:</strong> Identified significant differences between numeric attributes (like vs. dislike).</p>
+            <p><strong>Significant Variables:</strong></p>
+            <ul class="list-disc pl-5 text-gray-700">
+                <li>Retained: danceability, tempo, valence.</li>
+                <li>Removed: energy, liveness, speechiness.</li>
+            </ul>
+            <img src="image/pairs .png" alt="Significant Variables Table" class="w-full max-w-md mx-auto my-4">
+        </section>
+
+        <section class="bg-white shadow-lg rounded-lg p-6 mb-6">
+            <h2 class="text-2xl font-bold text-indigo-600 mb-4">k-Nearest Neighbors (k-NN) Model</h2>
+            <p>Implemented k-NN to predict song likability.</p>
+            <p>Found optimal k-value (7) through validation accuracy.</p>
+            <img src="image/knn.png" alt="Accuracy vs. k-value" class="w-full max-w-md mx-auto my-4">
+        </section>
+
+        <section class="bg-white shadow-lg rounded-lg p-6 mb-6">
+            <h2 class="text-2xl font-bold text-indigo-600 mb-4">Final Prediction Output</h2>
+            <p>The final prediction (nn_optimal value: 94.018) indicates the song is liked based on th knn model.</p>
+            <img src="image/result liked .png" alt="Final Prediction Output" class="w-full max-w-md mx-auto my-4">
+        </section>
+
+        <!-- Credit Card Income Classification -->
+        <section class="bg-white shadow-lg rounded-lg p-6 mb-6">
+            <h2 class="text-3xl font-bold text-indigo-600 mb-4">Credit Card Income Classification Using Naive Bayes</h2>
+            <p>This study predicts individuals' income levels based on credit card usage patterns using a Naive Bayes classifier.</p>
+        </section>
+
+        <section class="bg-white shadow-lg rounded-lg p-6 mb-6">
+            <h2 class="text-2xl font-bold text-indigo-600 mb-4">Data Preprocessing</h2>
+            <ul class="list-disc pl-5 text-gray-700">
+                <li><strong>Binning:</strong> Continuous variables were categorized using equal-width binning.</li>
+                <li><strong>Feature Selection:</strong> The <code>majorcards</code> variable was removed due to weak predictive power.</li>
+                <li><strong>Encoding:</strong> Categorical variables were converted into meaningful factor levels.</li>
+            </ul>
+        </section>
+
+        <section class="bg-white shadow-lg rounded-lg p-6 mb-6">
+            <h2 class="text-2xl font-bold text-indigo-600 mb-4">Exploratory Data Analysis (EDA)</h2>
+            <p>Class distribution graphs illustrate the relationship between income and features such as expenditure, age, and activity level.</p>
+            <p>Higher spending and activity levels correlate with higher income groups.</p>
+            <<div class="flex justify-center space-x-4">
+                <img src="image/age-income .png" alt="Age vs Income" class="mt-4 rounded w-1/2">
+                <img src="image/exp-income.png" alt="Expenditure vs Income" class="mt-4 rounded w-1/2">
+            </div>
+        
+            <div class="flex justify-center space-x-4"">
+                <img src="image/months-inc.png" alt="Months vs Income" class="mt-4 rounded w-1/2">
+                <img src="image/majorcards.png" alt="Major Cards" class="mt-4 rounded w-1/2">
+            </div>
+        
+            <div class="flex justify-center space-x-4"">
+                <img src="image/share.png" alt="Share" class="mt-4 rounded w-1/2">
+                <img src="image/dependants.png" alt="Dependants" class="mt-4 rounded w-1/2">
+            </div>
+        
+            <div class="flex justify-center space-x-4"">
+                <img src="image/active.png" alt="Active" class="mt-4 rounded w-1/2">
+                <img src="image/reports.png" alt="Reports" class="mt-4 rounded w-1/2">
+            </div>
+        </section>
+        </section>
+
+        <section class="bg-white shadow-lg rounded-lg p-6 mb-6">
+            <h2 class="text-2xl font-bold text-indigo-600 mb-4">Model Training and Evaluation</h2>
+            <p>A Naive Bayes model was trained using a 60-40 train-validation split.</p>
+            <p><strong>Training Accuracy:</strong> 52.21%</p>
+            <p><strong>Validation Accuracy:</strong> 49.34%</p>
+            <<div class="flex justify-center space-x-4">
+                <<img src="image/train.png" alt="Training Confusion Matrix" class="mt-4 rounded w-1/2">
+                <img src="image/valid .png" alt="Validation Confusion Matrix" class="mt-4 rounded w-1/2">
+            </div>
+            
+        </section>
+
+        <section class="bg-white shadow-lg rounded-lg p-6 mb-6">
+            <h2 class="text-2xl font-bold text-indigo-600 mb-4">Predictions on New Observations</h2>
+            <p>A new observation was tested with key attributes such as expenditure of 3000, moderate share, and active status.</p>
+            <p>The model predicted the <strong>High</strong> income category with a <strong>68.98% probability</strong>.</p>
+            <img src="image/prediction .png" alt="Prediction Observation Screenshot" class="w-full max-w-md mx-auto my-4">
+        </section>
+
+        <section class="bg-white shadow-lg rounded-lg p-6">
+            <h2 class="text-2xl font-bold text-indigo-600 mb-4">Conclusion</h2>
+            <p>This combined analysis showcases insights from two different machine learning applications:</p>
+            <ul class="list-disc pl-5 text-gray-700">
+                <li>The k-NN model successfully predicted song likability based on musical attributes.</li>
+                <li>The Naive Bayes model provided reasonable classification of income groups, though with room for improvement.</li>
+                <li>Future enhancements could include alternative models and feature engineering.</li>
+            </ul>
+        </section>
+
+    </main>
+</body>
+</html>
+

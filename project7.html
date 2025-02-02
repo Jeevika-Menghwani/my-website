@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 7 - Credit Card Dataset Analysis: Factors Influencing Income</title>
+    <meta name="description" content="An analysis of financial and demographic attributes influencing income using credit card dataset.">
+    <meta name="keywords" content="Data Analysis, Credit Card, Income Factors, Regression Model">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+<body class="bg-gray-100 text-gray-900">
+    <header class="bg-white shadow-md sticky top-0 z-10 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-indigo-600">Project Analysis</h1>
+            <nav>
+                <a href="work.html" class="text-lg text-gray-700 hover:text-indigo-600">Back to Work</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-10">
+        <section class="bg-white shadow-lg rounded-lg p-6 mb-6">
+            <h2 class="text-3xl font-bold text-indigo-600 mb-4">Credit Card Dataset Analysis: Factors Influencing Income</h2>
+            <p>The dataset captures financial and demographic attributes of individuals. Key variables include dependents, monthly credit card expenditure, ownership status, self-employment, and the number of major credit cards.</p>
+        </section>
+
+        <section class="bg-white shadow-lg rounded-lg p-6 mb-6">
+            <h2 class="text-2xl font-bold text-indigo-600 mb-4">Methodology</h2>
+            <h3 class="text-xl font-medium mb-2">Exploratory Data Analysis (EDA)</h3>
+            <p>A moderate positive correlation (r=0.318) was observed between income and dependents. Linear regression revealed:</p>
+            <p><strong>Income = 2.917 + 0.445 × Dependents</strong></p>
+            <p>This suggests that income tends to rise moderately with an increase in dependents.</p>
+            <img src="image/SCATTERPLOT INCOME AND DEPENDANT .png" alt="Scatter Plot showing relationship between Income and Dependents" class="w-full max-w-md mx-auto my-4">
+        </section>
+
+        <section class="bg-white shadow-lg rounded-lg p-6 mb-6">
+            <h2 class="text-2xl font-bold text-indigo-600 mb-4">Regression Model Development</h2>
+            <p>A multivariate regression model included significant predictors such as expenditure, ownership status, self-employment, dependents, and major cards. The model had an adjusted R² = 0.2581, explaining 26% of income variability.</p>
+        </section>
+
+        <section class="bg-white shadow-lg rounded-lg p-6 mb-6">
+            <h2 class="text-2xl font-bold text-indigo-600 mb-4">Model Evaluation</h2>
+            <p><strong>Training Set:</strong> RMSE = 1.647, MAE = 1.144</p>
+            <p><strong>Validation Set:</strong> RMSE = 1.541, MAE = 1.111</p>
+            <p>The model showed good generalization with no overfitting.</p>
+            <img src="image/T-STATISTICS .png" alt="Student's t Distribution Plot" class="w-full max-w-md mx-auto my-4">
+        </section>
+
+        <section class="bg-white shadow-lg rounded-lg p-6 mb-6">
+            <h2 class="text-2xl font-bold text-indigo-600 mb-4">Feature Engineering</h2>
+            <p>Highly correlated variables like "share" were removed, and categorical variables (e.g., owner and card) were encoded as dummy variables.</p>
+        </section>
+
+        <section class="bg-white shadow-lg rounded-lg p-6">
+            <h2 class="text-2xl font-bold text-indigo-600 mb-4">Results and Key Insights</h2>
+            <ul class="list-disc pl-5 text-gray-700">
+                <li><strong>Dependents:</strong> A significant predictor of income but explains only part of its variability.</li>
+                <li><strong>Other Factors:</strong> Expenditure, ownership status, and self-employment also play critical roles.</li>
+                <li><strong>Additional Influences:</strong> Other unaccounted factors like education and geographic location may further impact income.</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

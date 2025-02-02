@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chicago Violations Analysis</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+<body class="bg-gray-100">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-10 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-indigo-600">Chicago Violations Analysis</h1>
+            <nav>
+                <ul class="flex space-x-6 text-gray-700 text-lg">
+                    <li><a href="index.html" class="hover:text-indigo-600">Home</a></li>
+                    <li><a href="work.html" class="hover:text-indigo-600 font-bold">Back to Projects</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-10">
+        <!-- Introduction Section -->
+        <section class="bg-white shadow-lg rounded-lg p-6 mb-6">
+            <h2 class="text-3xl font-bold text-indigo-600 mb-4">Introduction</h2>
+            <p>This analysis focuses on building violations in Chicago's 15th Ward, using a dataset with 784,225 observations and 22 variables. The study aims to uncover trends and insights into regulatory compliance.</p>
+        </section>
+
+        <!-- Key Findings Section -->
+        <section class="bg-white shadow-lg rounded-lg p-6 mb-6">
+            <h2 class="text-2xl font-bold text-indigo-600 mb-4">Key Steps and Findings</h2>
+            
+            <h3 class="text-xl font-semibold text-gray-800 mt-4">Data Import and Cleaning</h3>
+            <ul class="list-disc pl-5 text-gray-700">
+                <li>Imported data with 784,225 rows and 22 columns.</li>
+                <li>Addressed missing values (initially 0.27% missing, increased to 2.77% after converting blanks to NA).</li>
+                <li>Converted date variables to POSIXct format.</li>
+                <li>Created new variables:
+                    <ul class="list-disc pl-5">
+                        <li><strong>CityDelay:</strong> Days between hearing and violation dates.</li>
+                        <li><strong>Season:</strong> Categorized violations into Winter, Spring, Summer, and Fall.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3 class="text-xl font-semibold text-gray-800 mt-4">Data Analysis</h3>
+            <ul class="list-disc pl-5 text-gray-700">
+                <li>452 unique violation descriptions and 456 unique codes.</li>
+                <li>"AVE" was the most common street type.</li>
+                <li>Weak positive correlation (0.2242) between fines and administrative costs.</li>
+                <li>Average fines have declined over time, with 2024 showing the lowest due to an increase in "Continuance" cases.</li>
+            </ul>
+        </section>
+
+        <!-- Visualizations Section -->
+        <section class="bg-white shadow-lg rounded-lg p-6 mb-6">
+            <h2 class="text-2xl font-bold text-indigo-600 mb-4">Key Visualizations</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-800">Violations by Season</h3>
+                    <p>Summer recorded the highest number of violations.</p>
+                    <img src="image/violation by season .png"Bar plot of violations by season" class="mt-3 rounded">
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-800">Fines by Case Disposition</h3>
+                    <p>Default cases had the highest average fines, followed by Liable cases.</p>
+                    <img src="image/case diposition .png" alt="Bar plot of fines by case disposition" class="mt-3 rounded">
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-800">Administrative Costs</h3>
+                    <p>Histogram showing cost distribution by case disposition.</p>
+                    <img src="image/cost .png" alt="Histogram of administrative costs" class="mt-3 rounded">
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-800">Geospatial Analysis</h3>
+                    <p>A leaflet map visualizing violations in the 15th Ward.</p>
+                    <img src="image/leaf map .png" alt="Leaflet map of violation distribution" class="mt-3 rounded">
+                </div>
+            </div>
+        </section>
+
+        <!-- Insights Section -->
+        <section class="bg-white shadow-lg rounded-lg p-6 mb-6">
+            <h2 class="text-2xl font-bold text-indigo-600 mb-4">Insights and Observations</h2>
+            <ul class="list-disc pl-5 text-gray-700">
+                <li>"Liable" was the most common case disposition, while "Default" incurred the highest fines.</li>
+                <li>Violations peaked in summer, possibly due to increased construction activity.</li>
+                <li>Many offenders opted to pay fines directly, leading to prevalent default judgments.</li>
+            </ul>
+        </section>
+
+        <!-- 15th Ward Facts Section -->
+        <section class="bg-white shadow-lg rounded-lg p-6 mb-6">
+            <h2 class="text-2xl font-bold text-indigo-600 mb-4">Interesting Facts About the 15th Ward</h2>
+            <ul class="list-disc pl-5 text-gray-700">
+                <li>Includes Brighton Park, Gage Park, and West Englewood neighborhoods.</li>
+                <li>The first major manufacturing industry in Chicago began here in 1857.</li>
+                <li>Current Alderman: Raymond A. Lopez.</li>
+            </ul>
+        </section>
+
+        <!-- Conclusion Section -->
+        <section class="bg-white shadow-lg rounded-lg p-6">
+            <h2 class="text-2xl font-bold text-indigo-600 mb-4">Conclusion</h2>
+            <p>This analysis demonstrates the value of data mining for real-world applications. Through statistical and geospatial exploration, the study highlights patterns in violations, fines, and compliance in the 15th Ward. These insights provide a foundation for informed decision-making and improved regulatory enforcement.</p>
+        </section>
+    </main>
+</body>
+</html>
+

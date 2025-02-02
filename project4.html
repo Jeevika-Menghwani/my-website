@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 4 - Employee Attrition Analysis</title>
+    <meta name="description" content="A data-driven analysis of employee attrition using machine learning models to identify key retention factors.">
+    <meta name="keywords" content="Employee Attrition, Data Analysis, Machine Learning, HR Analytics">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+<body class="bg-gray-100 text-gray-900">
+    <header class="bg-white shadow-md sticky top-0 z-10 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-indigo-600">Project Analysis</h1>
+            <nav>
+                <a href="work.html" class="text-lg text-gray-700 hover:text-indigo-600">Back to Work</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-10">
+        <section class="bg-white shadow-lg rounded-lg p-6 mb-6">
+            <h2 class="text-3xl font-bold text-indigo-600 mb-4">Employee Attrition Analysis: Data-Driven Insights</h2>
+            <p>This project leverages exploratory data analysis (EDA) and machine learning to uncover key factors influencing employee attrition. By developing and evaluating predictive models, we provide actionable insights for HR to improve retention strategies.</p>
+        </section>
+
+        <section class="bg-white shadow-lg rounded-lg p-6 mb-6">
+            <h2 class="text-2xl font-bold text-indigo-600 mb-4">Dataset & Preparation</h2>
+            <ul class="list-disc pl-5 text-gray-700">
+                <li>1470 employees, with key features like age, income, job satisfaction, and work-life balance.</li>
+                <li>Class Imbalance: 83.9% stayed, 16.1% left → required SMOTE & class weighting for better prediction.</li>
+                <li>Data Preprocessing: Encoded categorical variables, checked for correlations, and refined key features.</li>
+            </ul>
+            <div class="flex justify-center space-x-4">
+                <img src="image/Dataset Overview .png" alt="Dataset Overview" class="mt-3 rounded w-1/2">
+                <img src="image/class distribution.png" alt="Class Distribution" class="mt-3 rounded w-1/2">
+            </div>
+        </section>
+
+        <section class="bg-white shadow-lg rounded-lg p-6 mb-6">
+            <h2 class="text-2xl font-bold text-indigo-600 mb-4">Exploratory Data Analysis (EDA) – Key Findings</h2>
+            <ul class="list-disc pl-5 text-gray-700">
+                <li>Younger employees (avg. 33.6 years) were more likely to leave vs. 37.5 years for retained employees.</li>
+                <li>Higher distance from work (10.6 miles) increased attrition risk.</li>
+                <li>Lower salaries ($4787 vs. $6832) were linked to higher attrition.</li>
+            </ul>
+            <img src="image/eda analysis .png" alt="EDA Insights" class="mt-3 rounded w-1/2">
+        </section>
+
+        <section class="bg-white shadow-lg rounded-lg p-6 mb-6">
+            <h2 class="text-2xl font-bold text-indigo-600 mb-4">Model Development & Evaluation</h2>
+            <h3 class="text-xl font-semibold text-gray-800 mt-4">Logistic Regression</h3>
+            <p>Refined by removing non-significant variables. Key attrition predictors: age, income, job satisfaction, marital status, work-life balance, and distance from home.</p>
+            <div class="flex justify-center space-x-4">
+                <img src="image/logistic regression 1.png" alt="Logistic Regression" class="mt-3 rounded w-1/3">
+                <img src="image/logistic regression 2.png" alt="Logistic Regression" class="mt-3 rounded w-1/3">
+                <img src="image/confusion metrix 1.png" alt="Confusion Matrix" class="mt-3 rounded w-1/3">
+            </div>
+            <p class="mt-4">Performance:</p>
+            <ul class="list-disc pl-5 text-gray-700">
+                <li><strong>Training Accuracy:</strong> 84.13%</li>
+                <li><strong>Test Accuracy:</strong> 83.50%</li>
+                <li><strong>Sensitivity:</strong> 0.0% (Failed to predict attrition cases due to class imbalance)</li>
+            </ul>
+        </section>
+
+        <section class="bg-white shadow-lg rounded-lg p-6 mb-6">
+            <h3 class="text-xl font-semibold text-gray-800">Random Forest Model</h3>
+            <p>Hyperparameter tuning via GridSearchCV for optimization. Achieved better accuracy but still struggled with class imbalance.</p>
+            <div class="flex justify-center space-x-4">
+                <img src="image/rf.png" alt="Random Forest" class="mt-3 rounded w-1/2">
+                <img src="image/confusion metrix 2.png" alt="Confusion Matrix" class="mt-3 rounded w-1/2">
+            </div>
+            <p class="mt-4">Performance:</p>
+            <ul class="list-disc pl-5 text-gray-700">
+                <li><strong>Training Accuracy:</strong> 86.62%</li>
+                <li><strong>Test Accuracy:</strong> 84.35%</li>
+                <li><strong>Sensitivity:</strong> 6.19% (Still weak at predicting attrition cases)</li>
+            </ul>
+        </section>
+
+        <section class="bg-white shadow-lg rounded-lg p-6 mb-6">
+            <h2 class="text-2xl font-bold text-indigo-600 mb-4">Key Takeaways & HR Recommendations</h2>
+            <ul class="list-disc pl-5 text-gray-700">
+                <li>Models predict retention well but struggle with attrition cases due to class imbalance.</li>
+                <li><strong>HR Strategies:</strong>
+                    <ul class="list-disc pl-5">
+                        <li>Improve work-life balance & career development for at-risk employees.</li>
+                        <li>Adjust compensation & retention programs for younger, lower-income employees.</li>
+                        <li>Implement proactive engagement policies for employees living farther away.</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section class="bg-white shadow-lg rounded-lg p-6">
+            <h2 class="text-2xl font-bold text-indigo-600 mb-4">Conclusion</h2>
+            <p>This project showcases data-driven employee retention strategies using logistic regression & random forest models. While accuracy was strong, class imbalance remains a challenge, requiring data balancing & threshold tuning for better attrition prediction. These insights empower HR teams to minimize turnover costs and enhance workforce stability.</p>
+        </section>
+    </main>
+</body>
+</html>
